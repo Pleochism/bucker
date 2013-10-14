@@ -199,28 +199,28 @@ Bucker.prototype.exception = function (err) {
     });
 };
 
-Bucker.prototype.debug = function () {
-    this._runHandlers('debug', util.format.apply(this, arguments));
+Bucker.prototype.debug = function (msg, data) {
+    this._runHandlers('debug', {text: msg, attr: data});
     return this;
 };
 
-Bucker.prototype.log = Bucker.prototype.info = function () {
-    this._runHandlers('info', util.format.apply(this, arguments));
+Bucker.prototype.log = Bucker.prototype.info = function (msg, data) {
+    this._runHandlers('info', {text: msg, attr: data});
     return this;
 };
 
-Bucker.prototype.warn = function () {
-    this._runHandlers('warn', util.format.apply(this, arguments));
+Bucker.prototype.warn = function (msg, data) {
+    this._runHandlers('warn', {text: msg, attr: data});
     return this;
 };
 
-Bucker.prototype.warning = function () {
-    this._runHandlers('warn', util.format.apply(this, arguments));
+Bucker.prototype.warning = function (msg, data) {
+    this._runHandlers('warn', {text: msg, attr: data});
     return this;
 };
 
-Bucker.prototype.error = function () {
-    this._runHandlers('error', util.format.apply(this, arguments));
+Bucker.prototype.error = function (msg, data) {
+    this._runHandlers('error', {text: msg, attr: data});
     return this;
 };
 
